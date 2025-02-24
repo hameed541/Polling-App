@@ -1,0 +1,12 @@
+{% extends 'polls/base.html' %}
+
+{% block content %}
+<h2>Active Polls</h2>
+<ul class="list-group">
+    {% for poll in polls %}
+    <li class="list-group-item">
+        <a href="{% url 'poll_detail' poll.id %}">{{ poll.question }}</a>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}
